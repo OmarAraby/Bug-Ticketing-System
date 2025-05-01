@@ -29,20 +29,18 @@ A powerful and extensible RESTful API for managing software bug tracking across 
     
 - Entity Framework Core
     
-- SQL Server / SQLite
+- SQL Server
     
 - JWT Authentication
     
 - FluentValidation
     
-- Clean Architecture
+- N-Tier Architecture
     
 
 ---
 
 ## 📁 Folder Structure
-
-Here's a comprehensive folder structure for your Bug Ticketing System based on the screenshots you've shared:
 
 ```
 BugTicketingSystem/
@@ -250,52 +248,56 @@ Authorization: Bearer <JWT_TOKEN>
 
 ## 📌 API Endpoints
 
-### 👤 User Endpoints
 
-|Method|Endpoint|Description|Auth Required|Payload Example|
-|---|---|---|---|---|
-|POST|`/User/register`|Register a new user|❌|`{ "username": "john", "email": "john@example.com", "password": "1234" }`|
-|POST|`/User/login`|User login|❌|`{ "email": "john@example.com", "password": "1234" }`|
+### 👤 User Management
 
----
-
-### 📂 Project Endpoints
-
-|Method|Endpoint|Description|Auth Required|Payload Example|
-|---|---|---|---|---|
-|GET|`/Projects`|Get all projects|✅|—|
-|GET|`/Projects/{id}`|Get project by ID|✅|—|
-|POST|`/Projects`|Create a new project|✅|`{ "name": "App Redesign", "description": "New UI" }`|
-|PUT|`/Projects/{id}`|Update a project|✅|`{ "name": "Updated Project", "description": "Updated desc" }`|
-|DELETE|`/Projects/{id}`|Delete a project|✅|—|
+|Method|Endpoint|Description|
+|---|---|---|
+|POST|`/api/users/register`|Register a new user|
+|POST|`/api/users/login`|Login and receive JWT token|
 
 ---
 
-### 🐞 Bug Endpoints
+### 📂 Project Management
 
-| Method | Endpoint         | Description            | Auth Required | Payload Example                                                               |
-| ------ | ---------------- | ---------------------- | ------------- | ----------------------------------------------------------------------------- |
-| GET    | `/Bugs`          | Get all bugs           | ✅             | —                                                                             |
-| GET    | `/Bugs/{id}`     | Get bug by ID          | ✅             | —                                                                             |
-| POST   | `/Bugs`          | Create a new bug       | ✅             | `{ "title": "Login Error", "description": "Cannot login", "projectId": "1" }` |
-| PUT    | `/Bugs/{id}`     | Update a bug           | ✅             | `{ "title": "Updated Bug", "status": "Resolved" }`                            |
-| DELETE | `/Bugs/{id}`     | Delete a bug           | ✅             | —                                                                             |
-| POST   | `/Bugs/assign`   | Assign user to a bug   | ✅             | `{ "bugId": "1", "userId": "2" }`                                             |
-| POST   | `/Bugs/unassign` | Unassign user from bug | ✅             | `{ "bugId": "1", "userId": "2" }`                                             |
+|Method|Endpoint|Description|
+|---|---|---|
+|POST|`/api/projects`|Create a new project|
+|GET|`/api/projects`|List all projects|
+|GET|`/api/projects/:id`|Get specific project info + related bugs|
 
 ---
 
-### 📎 Attachment Endpoints
+### 🐞 Bug Management
 
-| Method | Endpoint                          | Description          | Auth Required | Payload Example         |
-| ------ | --------------------------------- | -------------------- | ------------- | ----------------------- |
-| POST   | `/bugs/{bugId}/Attachments`       | Upload an attachment | ✅             | Multipart Form (`file`) |
-| GET    | `/bugs/{bugId}//Attachments/{id}` | Get attachment by ID | ✅             | —                       |
-| DELETE | `/bugs/{bugId}//Attachments/{id}` | Delete an attachment | ✅             | —                       |
+|Method|Endpoint|Description|
+|---|---|---|
+|POST|`/api/bugs`|Create (report) a new bug|
+|GET|`/api/bugs`|List all bugs|
+|GET|`/api/bugs/:id`|Get detailed info for a specific bug|
 
 ---
 
-Let me know if you'd like this exported as a Markdown file or if you'd like Swagger documentation generated too.
+### 👥 User-Bug Relationships
+
+| Method | Endpoint                         | Description                     |
+| ------ | -------------------------------- | ------------------------------- |
+| POST   | `/api/bugs/:id/assign`           | Assign a user to a bug          |
+| DELETE | `/api/bugs/:id/unassign/:userId` | Remove user assignment from bug |
+|        |                                  |                                 |
+
+---
+
+### 📎 File Management
+
+|Method|Endpoint|Description|
+|---|---|---|
+|POST|`/api/bugs/:id/attachments`|Upload attachment to bug|
+|GET|`/api/bugs/:id/attachments`|Get all attachments for a bug|
+|DELETE|`/api/bugs/:id/attachments/:attachmentId`|Delete a specific attachment|
+
+---
+
 ## 🧪 Testing
 
 You can use **Postman** or Swagger (if enabled) to test all endpoints. Make sure to include the Bearer token for protected routes.
@@ -338,6 +340,3 @@ MIT License. See `LICENSE` file for details.
 
 Built with ❤️ using ASP.NET Core by ***Omar Araby***.
 
----
-
-Would you like me to generate a Markdown file version or add a project logo/header to it?
