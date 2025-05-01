@@ -1,0 +1,33 @@
+﻿namespace BugTicketingSystem.APIs.HandleFiles
+{
+    public class FileService : IFileService
+    {
+        private readonly string _uploadPath = Path.Combine(Directory.GetCurrentDirectory(), "Images");
+        private readonly List<string> _allowedExtensions = new() { ".jpg", ".jpeg", ".png" };
+        private const int _maxFileSize = 15 * 1024 * 1024;
+        public async Task<FileUploadResult> UploadFileAsync(IFormFile file)
+        {
+            //throw new NotImplementedException();
+            if (file.Length == 0)
+            {
+                throw new Exception("Empty file");
+            }
+            if (file.Length > _maxFileSize)
+                throw new ArgumentException("File is too large");
+
+
+
+            var extension = Path.GetExtension(file.FileName).ToLowerInvariant();
+            if (!_allowedExtensions.Contains(extension))
+                throw new ArgumentException("File must be a jpg, jpeg, or png");
+
+
+            var filePath = Path.Combine(_uploadPath, $"{Guid.NewGuid()}{extension}");
+
+            using var stream = new FileStream(filePath, FileMode.Create);
+            await file.CopyToAsync(stream);
+
+            return new FileUploadResult($"/api/static-files/{Path.GetFileName(filePath)}");
+        }
+    }
+}

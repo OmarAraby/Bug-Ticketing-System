@@ -1,0 +1,15 @@
+D:\iti-9-month\ASP\Labs\BugTicketingSystem\BugTicketingSystem.BL\bin\Debug\net9.0\BugTicketingSystem.BL.deps.json
+D:\iti-9-month\ASP\Labs\BugTicketingSystem\BugTicketingSystem.BL\bin\Debug\net9.0\BugTicketingSystem.BL.dll
+D:\iti-9-month\ASP\Labs\BugTicketingSystem\BugTicketingSystem.BL\bin\Debug\net9.0\BugTicketingSystem.BL.pdb
+D:\iti-9-month\ASP\Labs\BugTicketingSystem\BugTicketingSystem.BL\bin\Debug\net9.0\BugTicketingSystem.DL.dll
+D:\iti-9-month\ASP\Labs\BugTicketingSystem\BugTicketingSystem.BL\bin\Debug\net9.0\BugTicketingSystem.DL.pdb
+D:\iti-9-month\ASP\Labs\BugTicketingSystem\BugTicketingSystem.BL\obj\Debug\net9.0\BugTicketingSystem.BL.csproj.AssemblyReference.cache
+D:\iti-9-month\ASP\Labs\BugTicketingSystem\BugTicketingSystem.BL\obj\Debug\net9.0\BugTicketingSystem.BL.GeneratedMSBuildEditorConfig.editorconfig
+D:\iti-9-month\ASP\Labs\BugTicketingSystem\BugTicketingSystem.BL\obj\Debug\net9.0\BugTicketingSystem.BL.AssemblyInfoInputs.cache
+D:\iti-9-month\ASP\Labs\BugTicketingSystem\BugTicketingSystem.BL\obj\Debug\net9.0\BugTicketingSystem.BL.AssemblyInfo.cs
+D:\iti-9-month\ASP\Labs\BugTicketingSystem\BugTicketingSystem.BL\obj\Debug\net9.0\BugTicketingSystem.BL.csproj.CoreCompileInputs.cache
+D:\iti-9-month\ASP\Labs\BugTicketingSystem\BugTicketingSystem.BL\obj\Debug\net9.0\BugTicke.A9DBF8D7.Up2Date
+D:\iti-9-month\ASP\Labs\BugTicketingSystem\BugTicketingSystem.BL\obj\Debug\net9.0\BugTicketingSystem.BL.dll
+D:\iti-9-month\ASP\Labs\BugTicketingSystem\BugTicketingSystem.BL\obj\Debug\net9.0\refint\BugTicketingSystem.BL.dll
+D:\iti-9-month\ASP\Labs\BugTicketingSystem\BugTicketingSystem.BL\obj\Debug\net9.0\BugTicketingSystem.BL.pdb
+D:\iti-9-month\ASP\Labs\BugTicketingSystem\BugTicketingSystem.BL\obj\Debug\net9.0\ref\BugTicketingSystem.BL.dll

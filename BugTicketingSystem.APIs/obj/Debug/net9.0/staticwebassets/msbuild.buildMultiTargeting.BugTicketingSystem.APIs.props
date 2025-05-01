@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\BugTicketingSystem.APIs.props" />
+</Project>
