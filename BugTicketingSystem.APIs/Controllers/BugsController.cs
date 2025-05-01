@@ -2,6 +2,7 @@
 using BugTicketingSystem.BL.Managers.Bug;
 using BugTicketingSystem.BL.Utils.Error;
 using BugTicketingSystem.DL.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,6 +10,7 @@ namespace BugTicketingSystem.APIs.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class BugsController : ControllerBase
     {
         private readonly IBugManager _bugManager;

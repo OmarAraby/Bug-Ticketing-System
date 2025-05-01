@@ -1,6 +1,7 @@
 ﻿using BugTicketingSystem.BL.Dtos.ProjectDtos;
 using BugTicketingSystem.BL.Managers.Project;
 using BugTicketingSystem.BL.Utils.Error;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,6 +9,7 @@ namespace BugTicketingSystem.APIs.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ProjectsController : ControllerBase
     {
         private readonly IProjectManager _projectManager;

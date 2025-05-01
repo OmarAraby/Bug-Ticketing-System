@@ -2,6 +2,7 @@
 using BugTicketingSystem.BL.Dtos.AttachmentDtos;
 using BugTicketingSystem.BL.Managers.Attachment;
 using BugTicketingSystem.BL.Utils.Error;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,6 +10,7 @@ namespace BugTicketingSystem.APIs.Controllers
 {
     [Route("api/bugs/{bugId}/[controller]")]
     [ApiController]
+    [Authorize]
     public class AttachmentsController : ControllerBase
     {
         private readonly IAttachmentManager _attachmentManager;
