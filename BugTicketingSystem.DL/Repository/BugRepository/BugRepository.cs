@@ -19,11 +19,20 @@ namespace BugTicketingSystem.DL.Repository.BugRepository
         }
 
         public async Task<Bug> GetByIdAsync(Guid id)
-            => await _context.Bugs.FindAsync(id);
+        {
+            return await _context.Bugs
+               .Include(b => b.Project) // Include Project
+                .Include(b => b.Assignees) // Include Assignees
+                    .ThenInclude(bu => bu.User) // Include User for each BugUser
+                .FirstOrDefaultAsync(b => b.BugId == id);
+        }
 
         public async Task<IEnumerable<Bug>> GetAllAsync()
-            => await _context.Bugs.ToListAsync();
-
+        {
+            return await _context.Bugs
+                .Include(b => b.Project) // Include the Project navigation property
+                .ToListAsync();
+        }
         public async Task<IEnumerable<Bug>> GetByProjectIdAsync(Guid projectId)
             => await _context.Bugs.Where(b => b.ProjectId == projectId).ToListAsync();
 

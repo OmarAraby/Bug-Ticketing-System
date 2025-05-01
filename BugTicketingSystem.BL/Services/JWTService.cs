@@ -63,6 +63,7 @@ namespace BugTicketingSystem.BL.Services
     
             return new AuthResponseDto
             {
+                UserId = user.UserId, // Set the UserId  just for test when i add bug i will need it 
                 UserName = user.UserName,
                 Email = user.Email,
                 Token = tokenString,

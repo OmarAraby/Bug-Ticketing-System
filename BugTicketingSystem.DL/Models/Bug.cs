@@ -1,7 +1,4 @@
 ﻿
-
-using System.Net.Mail;
-
 namespace BugTicketingSystem.DL.Models
 {
    public class Bug

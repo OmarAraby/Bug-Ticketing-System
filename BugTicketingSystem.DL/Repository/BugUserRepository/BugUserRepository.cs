@@ -1,11 +1,7 @@
 ﻿using BugTicketingSystem.DL.Context;
 using BugTicketingSystem.DL.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace BugTicketingSystem.DL.Repository.BugUserRepository
 {
@@ -18,9 +14,15 @@ namespace BugTicketingSystem.DL.Repository.BugUserRepository
             _context = context;
         }
 
-        public async Task AssignUserToBug(Guid bugId, Guid userId)
+        public async Task AssignUserToBug(Guid bugId, Guid userId, RoleType role)
         {
-            var bugUser = new BugUser { BugId = bugId, UserId = userId };
+            var bugUser = new BugUser
+            {
+                BugId = bugId,
+                UserId = userId,
+                Role = role,
+                AssignedDate = DateTime.UtcNow
+            };
             await _context.BugUsers.AddAsync(bugUser);
         }
 
@@ -36,5 +38,11 @@ namespace BugTicketingSystem.DL.Repository.BugUserRepository
         public async Task<bool> IsUserAssignedToBug(Guid bugId, Guid userId)
             => await _context.BugUsers
                 .AnyAsync(bu => bu.BugId == bugId && bu.UserId == userId);
+
+        public async Task<IEnumerable<BugUser>> GetAssigneesForBugAsync(Guid bugId)
+            => await _context.BugUsers
+                .Where(bu => bu.BugId == bugId)
+                .Include(bu => bu.User) // Include User for mapping
+                .ToListAsync();
     }
 }

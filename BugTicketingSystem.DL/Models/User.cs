@@ -1,5 +1,4 @@
 ﻿
-
 namespace BugTicketingSystem.DL.Models
 {
     public class User

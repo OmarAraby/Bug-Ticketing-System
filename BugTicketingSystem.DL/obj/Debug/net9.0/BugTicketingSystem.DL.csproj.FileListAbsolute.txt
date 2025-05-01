@@ -10,3 +10,4 @@ D:\iti-9-month\ASP\Labs\BugTicketingSystem\BugTicketingSystem.DL\obj\Debug\net9.
 D:\iti-9-month\ASP\Labs\BugTicketingSystem\BugTicketingSystem.DL\obj\Debug\net9.0\refint\BugTicketingSystem.DL.dll
 D:\iti-9-month\ASP\Labs\BugTicketingSystem\BugTicketingSystem.DL\obj\Debug\net9.0\BugTicketingSystem.DL.pdb
 D:\iti-9-month\ASP\Labs\BugTicketingSystem\BugTicketingSystem.DL\obj\Debug\net9.0\ref\BugTicketingSystem.DL.dll
+D:\iti-9-month\ASP\Labs\BugTicketingSystem\BugTicketingSystem.DL\obj\Debug\net9.0\BugTicketingSystem.DL.sourcelink.json

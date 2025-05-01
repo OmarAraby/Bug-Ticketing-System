@@ -9,8 +9,9 @@ namespace BugTicketingSystem.DL.Repository.BugUserRepository
 {
     public interface IBugUserRepository
     {
-        Task AssignUserToBug(Guid bugId, Guid userId);
+        Task AssignUserToBug(Guid bugId, Guid userId, RoleType role); 
         Task RemoveUserFromBug(Guid bugId, Guid userId);
         Task<bool> IsUserAssignedToBug(Guid bugId, Guid userId);
+        Task<IEnumerable<BugUser>> GetAssigneesForBugAsync(Guid bugId); 
     }
 }

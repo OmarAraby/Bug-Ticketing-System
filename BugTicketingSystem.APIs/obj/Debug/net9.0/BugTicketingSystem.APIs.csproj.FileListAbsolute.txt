@@ -176,3 +176,4 @@ D:\iti-9-month\ASP\Labs\BugTicketingSystem\BugTicketingSystem.APIs\obj\Debug\net
 D:\iti-9-month\ASP\Labs\BugTicketingSystem\BugTicketingSystem.APIs\bin\Debug\net9.0\FluentValidation.dll
 D:\iti-9-month\ASP\Labs\BugTicketingSystem\BugTicketingSystem.APIs\bin\Debug\net9.0\FluentValidation.DependencyInjectionExtensions.dll
 D:\iti-9-month\ASP\Labs\BugTicketingSystem\BugTicketingSystem.APIs\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\iti-9-month\ASP\Labs\BugTicketingSystem\BugTicketingSystem.APIs\obj\Debug\net9.0\BugTicketingSystem.APIs.sourcelink.json

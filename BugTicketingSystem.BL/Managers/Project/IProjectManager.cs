@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// IProjectManager.cs
+using BugTicketingSystem.BL.Dtos.ProjectDtos;
+using BugTicketingSystem.BL.Utils.Error;
 
 namespace BugTicketingSystem.BL.Managers.Project
 {
-    interface IProjectManager
+    public interface IProjectManager
     {
+        Task<APIResult<ProjectDetailsDto>> Create(ProjectCreateDto dto);
+        Task<APIResult<IEnumerable<ProjectDetailsDto>>> GetAll();
+        Task<APIResult<ProjectDetailsDto>> GetDetails(Guid id);
     }
 }
