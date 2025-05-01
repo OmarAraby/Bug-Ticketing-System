@@ -1,3 +1,4 @@
+using BugTicketingSystem.APIs.HandleFiles;
 using BugTicketingSystem.APIs.Middleware;
 using BugTicketingSystem.BL;
 using BugTicketingSystem.DAL;
@@ -20,6 +21,9 @@ builder.Services.AddDataAccessServices(builder.Configuration);
 
 builder.Services.AddExceptionHandler<ExceptionHandlingMiddleware>();
 builder.Services.AddProblemDetails();
+
+builder.Services.AddScoped<IFileService, FileService>();
+
 
 
 
@@ -59,8 +63,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseAuthentication();
-app.UseAuthorization();
+//app.UseAuthentication();
+//app.UseAuthorization();
 
 
 
@@ -68,7 +72,7 @@ app.UseAuthorization();
 
 // handle image upload
 //if folder doesn't exist create it
-var imageFolderPath = Path.Combine(Directory.GetCurrentDirectory(), "Images");
+var imageFolderPath = Path.Combine(Directory.GetCurrentDirectory(), "Upload");
 Directory.CreateDirectory(imageFolderPath);
 
 

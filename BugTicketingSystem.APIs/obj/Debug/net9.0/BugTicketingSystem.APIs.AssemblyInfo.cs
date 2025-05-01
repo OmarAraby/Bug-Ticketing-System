@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BugTicketingSystem.APIs")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a2897ada955b452a49ce16524e7b02086199cacd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6148b6c6b4793cc059bdc9b5b2d18bdd6e3e0054")]
 [assembly: System.Reflection.AssemblyProductAttribute("BugTicketingSystem.APIs")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BugTicketingSystem.APIs")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

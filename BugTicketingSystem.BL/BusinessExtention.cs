@@ -1,4 +1,5 @@
-﻿using BugTicketingSystem.BL.Managers.Bug;
+﻿using BugTicketingSystem.BL.Managers.Attachment;
+using BugTicketingSystem.BL.Managers.Bug;
 using BugTicketingSystem.BL.Managers.Project;
 using BugTicketingSystem.BL.Managers.User;
 using BugTicketingSystem.BL.Services;
@@ -14,6 +15,7 @@ namespace BugTicketingSystem.BL
             services.AddScoped<IUserManager, UserManager>();
             services.AddScoped<IProjectManager, ProjectManager>();
             services.AddScoped<IBugManager, BugManager>();
+            services.AddScoped<IAttachmentManager, AttachmentManager>();
 
             services.AddScoped<JWTService>();
 

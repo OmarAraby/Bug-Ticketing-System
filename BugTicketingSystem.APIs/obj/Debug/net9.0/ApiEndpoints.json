@@ -47,6 +47,64 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "BugTicketingSystem.APIs.Controllers.AttachmentsController",
+    "Method": "UploadAttachment",
+    "RelativePath": "api/bugs/{bugId}/Attachments",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bugId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "File",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BugTicketingSystem.APIs.Controllers.AttachmentsController",
+    "Method": "GetAttachmentsForBug",
+    "RelativePath": "api/bugs/{bugId}/Attachments",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bugId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BugTicketingSystem.APIs.Controllers.AttachmentsController",
+    "Method": "DeleteAttachment",
+    "RelativePath": "api/bugs/{bugId}/Attachments/{attachmentId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bugId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "attachmentId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "BugTicketingSystem.APIs.Controllers.BugsController",
     "Method": "RemoveUserFromBug",
     "RelativePath": "api/Bugs/{bugId}/unassign/{userId}",

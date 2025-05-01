@@ -2,25 +2,22 @@
 {
     public class FileService : IFileService
     {
-        private readonly string _uploadPath = Path.Combine(Directory.GetCurrentDirectory(), "Images");
-        private readonly List<string> _allowedExtensions = new() { ".jpg", ".jpeg", ".png" };
+        private readonly string _uploadPath = Path.Combine(Directory.GetCurrentDirectory(), "Upload");
+        private readonly List<string> _allowedExtensions = new() { ".jpg", ".jpeg", ".png", ".pdf", ".txt" };
         private const int _maxFileSize = 15 * 1024 * 1024;
         public async Task<FileUploadResult> UploadFileAsync(IFormFile file)
         {
-            //throw new NotImplementedException();
-            if (file.Length == 0)
+            if (file == null || file.Length == 0)
             {
-                throw new Exception("Empty file");
+                throw new ArgumentException("No file provided or file is empty");
             }
+
             if (file.Length > _maxFileSize)
                 throw new ArgumentException("File is too large");
 
-
-
             var extension = Path.GetExtension(file.FileName).ToLowerInvariant();
             if (!_allowedExtensions.Contains(extension))
-                throw new ArgumentException("File must be a jpg, jpeg, or png");
-
+                throw new ArgumentException("File must be a jpg, jpeg, png, pdf, or txt");
 
             var filePath = Path.Combine(_uploadPath, $"{Guid.NewGuid()}{extension}");
 
