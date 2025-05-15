@@ -2,7 +2,7 @@
 
 # 🐞 Bug Ticketing System API
 
-A powerful and extensible RESTful API for managing software bug tracking across projects and teams. Built with **ASP.NET Core**, it follows Clean Architecture principles to ensure maintainability, testability, and scalability.
+A powerful and extensible RESTful API for managing software bug tracking across projects and teams. Built with **ASP.NET Core**, it follows N-Tiers Architecture principles to ensure maintainability, testability, and scalability.
 
 ---
 
